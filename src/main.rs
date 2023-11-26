@@ -2,6 +2,7 @@ use std::io;
 use rand::Rng;
 
 fn main() {
+    //intro logs
     println!("==============================================");
     println!("Welcome to Rust Paper Scissors!");
     println!("Simply type: r, p, s");
@@ -23,12 +24,13 @@ fn main() {
         println!("");
         println!("Type your move!");
 
+        //handles getting users input
         io::stdin()
             // here I reference the string by borrowing it and say I would like to mutate it
             .read_line(&mut player_move)
             .expect("Error Reading Line");
 
-        //trim method return string slice
+        //trim method return string slice then to lower_case() return String
         let trim_player_move: String = player_move.trim().to_lowercase();
         let trim_player_move_ref: &str = trim_player_move.as_str();
 
@@ -36,6 +38,7 @@ fn main() {
 
         if trim_player_move_ref == computer_move {
             println!("Tie Game!");
+            //continue loops the array back without running code below
             continue;
         }
 
