@@ -17,7 +17,7 @@ fn main() {
         create a new variable with the name random_number and an inter type of unsigned size
         that is equal to the thread_rng().gen_range method from the rand cargo
         */
-        let random_number: usize = rand::thread_rng().gen_range(1..3);
+        let random_number: usize = rand::thread_rng().gen_range(0..3);
         let computer_move: &str = moves[random_number];
 
         println!("");
